@@ -42,12 +42,9 @@ INSTALLED_APPS = [
     'ServicesApp',
     'Adopt',
     'HelpApp',
-    #Bootstrap form styling library
-    'crispy_forms'
-]
-#Bootstrap form styling library
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -140,5 +137,5 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS=True
 EMAIL_PORT =587
-EMAIL_HOST_USER = "penaperezchristal@gmail.com"
-EMAIL_HOST_PASSWORD = 'cqmqumxteqpkssgn'
+#EMAIL_HOST_USER = 'your gmail'
+#EMAIL_HOST_PASSWORD = 'your password'
