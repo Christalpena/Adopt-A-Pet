@@ -1,0 +1,117 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!--font awasome-->
+    <link rel="stylesheet" href="https://kit.fontawesome.com/516de82472.css" crossorigin="anonymous">
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href='{% static "PetsPage/css/main.css" %}?6.5' media="all">
+
+    <title>Document</title>
+</head>
+<header>
+    <section class="header-content" >
+        <h1 class="title">Bit Bites</h1>
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="padding: 0%;margin-bottom: 10px;">
+            <div class="container-fluid" style="background-color: rgb(255,153,0);margin-top: -8px;padding-bottom: 10px;">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" aria-current="page" href="{% url 'main' %}">Home</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link {% if request.path|slice:':10' == '/services/' %}active{% endif %}" href="{% url 'services' %}">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path|slice:':11' == '/AdoptAPet/' %}active{% endif %}" href="{% url 'adopt' %}">Adopt</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/help/' %}active{% endif %}" href="{% url 'help' %}">Help</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path|slice:':15' == '/AdoptAPet/dogs' %}active{% endif %}" href="{% url 'dog' %}">Dogs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path|slice:':15' == '/AdoptAPet/cats' %}active{% endif %}" href="{% url 'cat' %}">Cats</a>
+                  </li>
+                </ul>      
+                <form action="/search" class="d-flex" role="search" style=" width: fit-content;" method="GET">
+                  <input class="form-control me-2" type="search" placeholder="Race" aria-label="Search" style="width: 20rem; border-radius: 30px; height: fit-content;margin-top: 0.5rem;" name="search" value="{{ request.GET.search }}">
+                  <button class="btn btn-outline-success" type="submit" style="border-radius: 25px; border-color:white; background-color: #10b7e1; width: 3rem; height: 3rem;"><i class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
+                </form>
+                <span class="navbar-text">
+                  <img class="img-fluid img" style="margin-top: -3.75rem; margin-bottom: -1.3rem; height: 140px;width: 190px;" src="{% static 'PetsPage\image\zarla-paraso-peludo-1x1-2400x2400-20210825-4wvhv9v6h6jqj4phdt3v.png' %}" alt="">
+                </span>
+
+              </div>
+            </div>
+          </nav>
+        <style>
+            .nav-link{
+                color: white;
+                font-size: 20px;
+                font-weight: 500;
+                margin: auto;
+                
+            }
+
+
+
+          
+
+
+        </style>
+    </section>
+
+
+</header>
+<body>
+    {% block content %}
+    
+    {% endblock %}
+</body>
+<footer>
+  <div class="container_footer">
+    <div class="content-footer">
+      <h4>Social media</h4>
+      <p><img style="height: 30px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt=""> christalperez0@gmail.com</p>
+      <p style="text-align: left;" ><a href="https://www.linkedin.com/in/christal-pe%C3%B1a-p%C3%A9rez-15b1b4251/"><img style="height: 40px;padding-right: 4px;" src="https://img.freepik.com/vector-premium/logo-linkedin_578229-227.jpg" alt=""></a>Linkedin</p>
+      <p style="text-align:start; margin-left: -1rem;" ><a href="https://github.com/Christalpena"><img style="height: 40px;margin-right: -0.7rem;" src="https://www.pngmart.com/files/22/GitHub-PNG-Isolated-Photo.png" alt=""></a>GitHub</p>
+    </div>
+    <div class="content-footer">
+      <h4>Content</h4>
+      <p>Animal Services</p>
+      <p>Adopt A Animal</p>
+      <p>Donate Food</p>
+      <p>Be A Volunteer</p>
+      <p>Be A Home For Animals</p>
+      <p>Sponsor an Abandoned Animal</p>
+      <p ><a style="color: white;" href="">Donate</a></p>
+    </div>
+    <div class="content-footer">
+      <h4>LOCATION</h4>
+      <p>Republica Dominicana</p>
+    </div>
+  </div>
+  <h2 class="last-titule">&copy; Christal developer | Christal Peña Perez</h2>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<script src="https://kit.fontawesome.com/516de82472.js" crossorigin="anonymous"></script>
+</html>

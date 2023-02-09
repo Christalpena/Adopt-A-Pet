@@ -1,0 +1,43 @@
+{% extends "PetsWebPage/main.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <section >
+      {% if "valid" in request.GET %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" >
+        <strong>information sent correctly</strong> 
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endif %}
+
+      {% for inf in data %}
+        <div class="card mb-3" style="max-width: 1500px; margin: auto;">
+            <div class="row g-0">
+              <div class="col-md-3" >
+                <img style="height: 100%;width: 100%; " src="{{inf.image.url}}" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8" style="text-align: center;margin-top: 20px;margin: auto;">
+                <div class="card-body">
+                  <strong style="font-weight: 700; font-size: 25px; color: #10b7e1;">{{inf.name}}</strong>
+                  <p class="card-text service-text">{{inf.description}}</p>
+                  <a href="{% url 'form' inf.id %}" class="btn btn-outline-danger ">contact us</a>
+
+                </div>
+              </div>
+            </div>
+          </div>     
+      {% endfor %}
+    </section>
+    
+    {% endblock %}
+    
+</body>
+</html>

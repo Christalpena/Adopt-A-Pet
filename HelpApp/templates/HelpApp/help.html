@@ -1,0 +1,109 @@
+{% extends 'PetsWebPage/main.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <section  style="background-color: white; padding-bottom: 2rem;">
+      <div style="background-color: white; margin-top: -10px;" class="phrase-container">
+
+          <div  class="phrase">
+            <img style="height: 15rem; float: left;" src="https://www.banfield.com/-/media/Project/Banfield/Main/en/Ear_Care/0575_02_600x600.gif?rev=41e10df4c0124d96b42b1200dbf36250&hash=3818B6D951766EEB3534D2E64AFB84B3" alt="">
+            <img style="height: 15rem; float: right;"  src="https://www.banfield.com/-/media/Project/Banfield/Main/en/Ear_Care/Cat_ear_care/Ear_mites-_in_cats/0894_02_600x600.gif?rev=f368b51b0ab2443eaaac419dfa43cc1c&hash=B2859425F7CB7F0BE6675543FE28CA45" alt="">
+
+            <p >          
+              We tend to think that the only way we can support a Pet Shelter, Pet Shelter or Animal Adoption Center, is solely by adopting or donating money, and although it is true, the most important action that can be You can do to help these places, it is responsible adoption, you have to know that there are other ways to collaborate and help shelters.
+            </p>
+
+            
+          
+          </div>
+
+      <div class="information-container">
+            <section class="help-container">
+              <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                  <div class="card card-container">
+                    <img src="https://images.hola.com/imagenes/mascotas/20221223223456/manias-mascotas-comer-dn/1-181-890/manias-mascotas-comer-t.jpg" class="card-img-top" alt="...">
+                    <div class="card-body" style="background-color: white;">
+                      <h5 class="card-title">Donate Food</h5>
+                      <p class="card-text">If you do not have the possibility of donating money or adopting an animal, you can do so by donating food of any brand for cats and dogs of all ages and sizes. The only condition is that they are closed bags, not bulk croquettes to avoid their deterioration. You can donate from a kilo to what is born from your heart and possibilities.</p>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card second-card">
+                    <img src="https://t2.ea.ltmcdn.com/es/posts/9/6/6/que_hace_un_voluntario_en_una_protectora_de_animales_23669_orig.jpg" class="card-img-top" alt="...">
+                    <div class="card-body" >
+                      <h5 class="card-title">Be a Volunteer</h5>
+                      <p class="card-text text" >Pets have become an essential part of the family nucleus.
+
+                        If you have the time and willingness to help, you can become a volunteer for a foundation. This work is very enriching, because you can share with the animals, pamper them and take care of them for as long as you want. You also have the possibility to help bathe them, give them medicine or take them for a walk. In addition, you can be a participant in sterilization and adoption days, where hands are always needed to help with this work..</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col" style="margin-top: -2.5rem;">
+                  <div class="card">
+                    <img src="https://www.vivesermecoop.cl/wp-content/uploads/2021/08/adopcion.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Sponsor an Abandoned Animal</h5>
+                      <p class="card-text">If you do not have enough resources to adopt an animal or do not have the time it takes to have a pet, sponsoring may be the best option. We have sponsorship programs from 1,000 pesos per month. You can follow the process of the pet you sponsored and influence when there is a possible adopter for it. You can also take care of any medical expenses in case you have an illness.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card card-container">
+                    <img src="https://www.purina.co.uk/sites/default/files/2020-11/Should%20I%20Get%20a%20Cat%20or%20DogTEASER.jpg" class="card-img-top" alt="...">
+                    <div class="card-body" style="background-color: white;">
+                      <h5 class="card-title">You Can Be a Home For Animals</h5>
+                      <p class="card-text">As long as you have a suitable place to care for one or more animals, you can become a foster home. This modality is used when an animal requires more specialized attention than the others, either because it has a delicate state of health or presents a pathology that is contagious to another species. The foster homes are supervised by the foundations in order to guarantee quality of life for the animals.
+                  </div>
+                </div>
+              </div>
+            </section>
+      </div>
+    <div>
+      <p class="second-phrase">
+        “We believe that when a society sees animals as part of it, behavioral changes among people begin. By reducing the number of animals on the streets, the accident rate, bites, and also, this leads to a more organized society".
+      </p>
+    </div>
+    </section>
+    <form action="" method="POST" style="background-color:  rgb(169, 161, 161);padding: 3rem;">
+      <p class="form-help-text">Would you like to help? This is your opportunity</p>
+      {% csrf_token %}
+      {% if "valid" in request.GET  %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>information sent correctly</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+      </div>
+      {% endif %}
+      <div>
+      <table class="help-table">
+        {{form.as_table}}
+
+      </table>
+      <div style="width: fit-content;margin: auto; margin-top: 8px;">
+        <button style="margin-left: 5rem; border-color: white;color: white;" type="submit"  class="btn">Send message</button>
+      </div> 
+    </div>
+
+
+
+    </form>
+    {% endblock %}
+    
+</body>
+</html>

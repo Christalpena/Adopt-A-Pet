@@ -1,0 +1,277 @@
+body{    
+    background-image: url('https://img.freepik.com/vector-premium/patron-fisuras-cabeza-perro-lindo-sobre-fondo-blanco_426735-106.jpg?w=2000');
+
+    background-size: cover;
+    background-size: 900px;
+    backdrop-filter:brightness(0.87);
+}
+
+header{
+    margin: auto;
+    background-color: rgb(255,153,0);
+    height: auto;
+    text-align: center;
+    width: auto;
+    margin-bottom: 0px;
+    box-shadow: 0px 0px 5px black;
+}
+            
+@media screen and (max-width:991px){
+    .d-flex {
+        width: fit-content;
+    margin: auto;    }
+
+    .img{
+        padding-top: 4rem;
+        width: 100px;
+        height: 100px;
+    }
+
+  }
+
+
+
+.filters{
+    background-color: red;
+    max-width: fit-content;
+}
+.card{
+    font-family: 'Aclonica', sans-serif;
+    
+}
+.btn{
+    color:rgb(255,153,0) ;
+    border-color: rgb(255,153,0);
+}
+.btn:hover{
+    background-color: rgb(243, 161, 37);
+    border-color:  rgb(243, 161, 37);
+}
+
+.cont{
+    width: 50rem;
+}
+
+@media screen and (max-width:802px) {
+    .cont{
+        width: auto;
+    }
+    
+}
+
+.information-container{
+    margin: 0 5rem;
+}
+
+/* Help Page */
+.phrase-container{
+    margin-bottom: 3rem;
+
+}
+
+@media screen and (max-width:850px) {
+    .petspage-card{
+        margin: 0%;
+    }
+    .objetives{
+        margin: 0%;
+    }
+    
+}
+
+
+.phrase{
+
+    font-family: 'Aclonica', sans-serif;
+    text-align: justify;
+    font-size: 30px;
+    font-weight: 450;
+    background-color: white;
+    margin-top: -1rem;
+    padding:4rem 1rem;
+    box-shadow: 0px 0px 5px black;
+    margin-bottom: 2rem;
+
+
+}
+
+.phrase p{
+    margin: 2rem;
+}
+
+
+.second-phrase{
+    font-family:'Rock Salt', cursive;
+    padding-top: 3rem;
+
+
+    text-align: center;
+    font-size: 30px;
+}
+
+
+
+/* until here */
+
+.card-container{
+    border-width: 3rem;
+    background-image:  url('https://img.freepik.com/vector-premium/patron-fisuras-cabeza-perro-lindo-sobre-fondo-blanco_426735-106.jpg?w=2000');
+}
+
+@media screen and (max-width:1399px) {
+    .card-container{
+        border-width: 1px;
+        background-image: none;
+    }
+    
+}
+
+@media screen and (max-width:767px) {
+    .second-card{
+        margin-bottom: 3.5rem;
+    }
+    
+}
+
+.title{
+    font-family: 'Lobster', cursive !important;
+    color: white;
+    padding-top: 40px;
+    font-size: 70px;
+    font-weight: 900;
+    
+}
+
+.help-table{
+    margin: auto;
+    padding: 0;
+    
+}
+
+.help-table input{
+    margin: 8px;
+}
+
+.pets-img{
+    margin-top: -0.7rem;
+    filter: brightness(50%);
+
+}
+
+.petpage-text{
+    font-family: 'Aclonica', sans-serif;
+    font-size: 25px;
+    padding: 3rem;
+    padding-bottom: 0%;
+    text-align: center;
+}
+.petpage-text2{
+    font-family: 'Aclonica', sans-serif;
+
+    font-size: 25px;
+    padding-top: 0%;
+    margin-top: -1rem;
+    margin: auto;
+    text-align: center;
+}
+
+.petpage-text3{
+    font-family: 'Aclonica', sans-serif;
+
+    font-size: 25px;
+    padding: 5rem;
+    text-align: center;
+}
+
+.service-text{
+    font-family: 'Aclonica', sans-serif;
+    font-size: 20px;
+
+}
+.form-help-text{
+    text-align: center;
+    margin: auto;
+    font-family: 'Aclonica', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+}
+
+/* alarm */
+
+.alert{
+    background-color:  #14a5c9;
+    color: white;
+    text-align: center; 
+    width: fit-content;
+    padding: 1rem 15rem;
+
+    margin: 0.5rem auto; 
+    border-color: transparent;
+}
+
+@media screen and (max-width:678px) {
+    .alert{
+        padding: 1rem 0%;
+        width:100%;
+    }
+    
+}
+/* until here */
+
+/*footer*/
+
+footer{
+    background:  rgb(255,153,0);
+    padding: 60px 0 30px 0;
+    box-shadow: 0px 0px 5px black;
+    overflow: hidden;
+    margin-top: 10em;
+    margin-top: 30px;
+}
+
+.container_footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    border-bottom: 3px solid  #ff9800;
+
+}
+
+.content-footer{
+    text-align: center;
+
+}
+
+.content-footer h4{
+    color: white;
+    border-bottom: 3px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    
+}
+
+.content-footer p{
+    font-family: 'Aclonica', sans-serif;
+
+    color:  black;
+}
+
+.last-titule{
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    font-family: 'Aclonica', sans-serif;
+
+    color: black;
+}
+
+.content-footer p a{
+    text-decoration: none;
+    color: black;
+}
+.content-footer p a :hover{
+    color: white;
+}

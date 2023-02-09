@@ -1,0 +1,63 @@
+{% extends "PetsWebPage/main.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    {% block content %}
+
+
+
+    <section style="margin-left: -1rem;">
+      <div style="text-align: center;">
+        {% if "valid" in request.GET %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert"  >
+          <strong>information sent correctly</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+
+      {% if data %}
+
+        {% for inf in data %}
+        <div style="display: inline-block; text-align: center;">
+
+          <div class="card" style="width: 18rem; margin-bottom: 10px;height: 35rem; margin-left: 10px;">
+            <img style="width: 18rem;height: 225px;" src="{{inf.photo.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" style="color:#10b7e1;font-weight: 700;">{{inf.name}}</h5>
+                <p class="card-text" style="height: 5rem;">{{inf.description}}</p>
+              </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Race:</strong> {{inf.race}}</li>
+              <li class="list-group-item"><strong>Age:</strong> {{inf.age}}</li>
+              <li class="list-group-item"><strong>Gender:</strong> {{inf.gender}}</li>
+            </ul>
+            <div class="card-body">
+              <a href="{% url 'infpage' inf.id %}" class="card-link"><button type="button" class="btn btn-outline-warning">Information</button></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% else %}
+          <div style="margin: 8rem 0 ;">
+            <p style="font-size: xx-large;font-weight: bold;font-family: 'Aclonica', sans-serif;
+            ">We don't have that race of animal</p>
+
+          </div>
+        {% endif %}
+
+      </div>
+    </section>
+
+
+    {% endblock %}
+
+    
+</body>
+</html>

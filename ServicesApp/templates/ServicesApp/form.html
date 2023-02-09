@@ -1,0 +1,45 @@
+{% extends "PetsWebPage/main.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    {% for data in data %}
+    <div class="card mb-3" style="max-width: 1500px; margin: auto;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img style="height: 100%;" src="{{data.image.url}}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8" style=" margin: auto; width: fit-content;">
+          <div class="card-body" style="margin: auto;width: fit-content;">
+            <form action="" method="POST" style="text-align: center;">
+              <div>
+                  <strong class="modal-title fs-5" id="exampleModalLabel" style="text-transform: uppercase;color: #10b7e1;">{{data.name}}</strong> 
+                  <div class="line"></div>
+              </div>
+              {% csrf_token %}
+              <input type="hidden" name="service" value="{{data.name}}">
+              <div><p><<<------------------------------------------->>></p></div>
+              <p>
+                {{form.as_p}}
+              </p>
+              <div>
+                <button type="submit" class="btn">Send message</button>
+              </div> 
+            </form>
+    
+
+          </div>
+        </div>
+      </div>
+    </div>
+      {% endfor %}
+      {% endblock %}
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'PetsWebPage/main.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <section>
+      <div >
+        <div class="card mb-3" style="width: fit-content; margin: auto; ">
+          <div class="row g-0">
+            <div class="col-md-4" style=" width: fit-content;margin: auto;">
+              <img style="width: 570px;height: 570px" src="{{data.photo.url}}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8" style="width:fit-content;margin: auto;">
+              <div class="card-body cont" style=" height: auto;">
+                <div class="card" style="width: auto; text-align: center;">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="text-transform: uppercase;color: #10b7e1; "><strong style="font-size: 3rem;">{{data.name}}</strong></li>
+                    <li class="list-group-item" >{{data.description}}</li>
+                    <li class="list-group-item"><strong>Gender:</strong> {{data.gender}}</li>
+                    <li class="list-group-item"><strong>Race: </strong>{{data.race}}</li>
+                    <li class="list-group-item"><strong>Kind: </strong>{{data.kind}}</li>
+                    <li class="list-group-item"><strong>Age: </strong>{{data.age}}</li>
+                    <li class="list-group-item"><strong>Height: </strong>{{data.height}} inches</li>
+                    <li class="list-group-item"><strong>Birth Date: </strong>{{data.birth_date}}</li>
+                    <li class="list-group-item"><strong>Vaccines: </strong>{{vaccines}}</li>
+                    <li class="list-group-item"><a href="{% url 'adoptform' data.id %}" class="card-link"><button type="button" class="btn btn-outline-danger">Adopt</button></a>
+                    </li>
+                  </ul>
+                  <div class="card-footer">
+                    People who really appreciate animals always ask their names (Lilian Jackson Braun)                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {% endblock %}
+    
+</body>
+</html>
